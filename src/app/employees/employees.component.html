@@ -1,0 +1,15 @@
+<p>Dolgozók</p>
+<label for="filter">Szűrés a beosztás számra: </label>
+<input type="text" [(ngModel)]="position">
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Név</th>
+        <th>Beosztás száma</th>
+    </tr>
+    <tr *ngFor="let employee of employees | empfilter:position"> <!-- | empfilter:1 ezzel rászűrünk a beosztás számára -->
+        <td>{{employee.id}}</td>
+        <td>{{employee.name}}</td>
+        <td>{{employee.positionId}}</td>
+    </tr>
+</table>
